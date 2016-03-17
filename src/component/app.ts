@@ -1,5 +1,6 @@
 import {Component} from 'angular2/core';
 import 'firebase';
+import 'lodash';
 
 @Component({
     selector: 'app',
@@ -9,11 +10,13 @@ import 'firebase';
             {{ user }}
             <button (click)="logOut()">Log out</button>
         </div>
+        <div *ngFor="#message of messages">{{message}}</div>
         `
 })
 export class AppComponent {
     public firebase:Firebase;
     public user:Object = null;
+    public messages:string[] = [];
 
     ngOnInit() {
         //".write": "auth != null && auth.uid == 'd571635f-65c9-44b7-a3aa-bc2b761e70e9'",
@@ -21,6 +24,10 @@ export class AppComponent {
         this.firebase.onAuth((authData:FirebaseAuthData) => {
             console.log(authData);
             this.user = authData;
+        });
+
+        this.firebase.on('value', (value:FirebaseDataSnapshot) => {
+            this.messages = _.toArray(value.val()).map((obj:{title:string}) => obj.title);
         });
 
         //this.messagesRef.on('value', (value) => console.log('on value', value.val()), (error) => console.log('on value failed', error));
