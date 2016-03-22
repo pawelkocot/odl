@@ -44,7 +44,7 @@ export class AppComponent {
     logIn() {
         this.firebase.authWithPassword({
             email: 'kocot.pawel@gmail.com',
-            password: 'aaaaa'
+            password: 'aaaaa1'
         });
     }
 

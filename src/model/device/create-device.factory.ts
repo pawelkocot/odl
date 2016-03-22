@@ -1,16 +1,5 @@
-import {DeviceInterface, OsInterface, ResolutionInterface} from "./device.model";
+import {Device, Os, Resolution} from "./device.model";
 
-export function createDevice(name:string, os:OsInterface, resolution:ResolutionInterface):DeviceInterface {
-    return {
-        name: name,
-        os: os,
-        resolution: resolution
-    };
-}
-
-
-class Deveice implements DeviceInterface {
-    constructor(private resolution:ResolutionInterface) {
-        this.resolution = resolution;
-    }
+export function createDevice(name:string, os:Os, resolution:Resolution):Device {
+    return new Device(name, os, resolution);
 }
