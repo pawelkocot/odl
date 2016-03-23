@@ -9,11 +9,11 @@ module.exports = {
     plugins: [
         new LiveReloadPlugin(),
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false
-            }
-        })
+        // new webpack.optimize.UglifyJsPlugin({
+        //     compress: {
+        //         warnings: false
+        //     }
+        // })
     ],
 
     entry: './src/main.ts',
