@@ -4,12 +4,12 @@ export interface DeviceInterface {
     resolution:ResolutionInterface
 }
 
-export interface ResolutionInterface {
-    width:number,
-    height:number
-}
-
 export interface OsInterface {
     name:string,
     version:string
+}
+
+export interface ResolutionInterface {
+    width:number,
+    height:number
 }

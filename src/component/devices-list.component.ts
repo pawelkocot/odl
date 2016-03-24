@@ -3,7 +3,13 @@ import {DeviceInterface} from '../model/device/device.model';
 
 @Component({
     selector: 'devices-list',
-    template: `diwajses`
+    template: `
+        <table>
+            <tr *ngFor="#device of devices">
+                <td>{{ device.name }}</td>            
+            </tr>
+        </table>
+    `
 })
 export class DevicesListComponent {
     @Input() devices:DeviceInterface[] = [];
