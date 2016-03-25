@@ -1,7 +1,7 @@
-import {DeviceInterface, OsInterface, ResolutionInterface} from './device.model';
+import {DeviceInterface, OsInterface, ResolutionInterface} from './device.model'
 
 export function createDevice(name:string, os:OsInterface, resolution:ResolutionInterface):DeviceInterface {
-    return new Device(name, os, resolution);
+    return new Device(name, os, resolution)
 }
 
 class Device implements DeviceInterface {

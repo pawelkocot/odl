@@ -1,16 +1,16 @@
-import {Injectable} from 'angular2/core';
-import 'firebase';
+import {Injectable} from 'angular2/core'
+import 'firebase'
 
 @Injectable()
 export class FirebaseService {
-    private _firebase:Firebase;
+    private _firebase:Firebase
 
     get firebase():Firebase {
         if (!this._firebase) {
             // @todo configurable path
-            this._firebase = new Firebase('https://odl.firebaseio.com/');
+            this._firebase = new Firebase('https://odl.firebaseio.com/')
         }
 
-        return this._firebase;
+        return this._firebase
     }
 }
